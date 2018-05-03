@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="RecognitionApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RecognitionApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Name="Source"/>
+            <TextBox Grid.Row="1" Name="Target" AcceptsReturn="True" TextWrapping="Wrap"/>
+        </Grid>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Page2" Label="New" Click="New_Click"/>
+            <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
+            <AppBarButton Icon="Save" Label="Save" Click="Save_Click"/>
+            <AppBarButton Icon="Document" Label="Sample" Click="Sample_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

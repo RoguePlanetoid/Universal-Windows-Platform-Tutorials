@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="ColourCommandSet_en-us">
+    <AppName>Colour</AppName>
+    <Example>Show Red</Example>
+    <Command Name="showColour">
+      <Example>Show Corn Flower Blue</Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">Show {colour}</ListenFor>
+      <Feedback>Showing {colour}</Feedback>
+      <Navigate Target="foo"/>
+    </Command>
+    <PhraseTopic Label="colour"/>
+  </CommandSet>
+  <CommandSet xml:lang="en-gb" Name="ColourCommandSet_en-gb">
+    <AppName>Colour</AppName>
+    <Example>Show Red</Example>
+    <Command Name="showColour">
+      <Example>Show Corn Flower Blue</Example>
+      <ListenFor RequireAppName="BeforeOrAfterPhrase">Show {colour}</ListenFor>
+      <Feedback>Showing {colour}</Feedback>
+      <Navigate Target="foo"/>
+    </Command>
+    <PhraseTopic Label="colour"/>
+  </CommandSet>
+</VoiceCommands>

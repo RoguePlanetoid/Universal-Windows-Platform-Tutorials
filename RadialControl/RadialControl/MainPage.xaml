@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="RadialControl.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RadialControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <local:RadialPanel Height="400" Width="400" IsOriented="True">
+            <Rectangle Width="50" Height="50" Fill="Black"/>
+            <Rectangle Width="50" Height="50" Fill="Gray"/>
+            <Rectangle Width="50" Height="50" Fill="Red"/>
+            <Rectangle Width="50" Height="50" Fill="Orange"/>
+            <Rectangle Width="50" Height="50" Fill="Yellow"/>
+            <Rectangle Width="50" Height="50" Fill="Green"/>
+            <Rectangle Width="50" Height="50" Fill="Cyan"/>
+            <Rectangle Width="50" Height="50" Fill="Blue"/>
+            <Rectangle Width="50" Height="50" Fill="Magenta"/>
+            <Rectangle Width="50" Height="50" Fill="Purple"/>
+        </local:RadialPanel>
+    </Grid>
+</Page>
