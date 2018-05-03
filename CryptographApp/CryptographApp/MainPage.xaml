@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="CryptographApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CryptographApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox Name="Display" AcceptsReturn="True" TextWrapping="Wrap" VerticalAlignment="Stretch"/>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
+            <AppBarButton Icon="Save" Label="Save" Click="Save_Click"/>
+            <AppBarButton Name="Encrypt" Icon="ProtectedDocument" Label="Encrypt" Click="Encrypt_Click"/>
+            <AppBarButton Name="Decrypt" Icon="Document" Label="Decrypt" Click="Decrypt_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontControl", "FontControl\FontControl.csproj", "{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|ARM.Build.0 = Debug|ARM
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|ARM.Deploy.0 = Debug|ARM
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|x64.ActiveCfg = Debug|x64
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|x64.Build.0 = Debug|x64
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|x64.Deploy.0 = Debug|x64
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|x86.ActiveCfg = Debug|x86
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|x86.Build.0 = Debug|x86
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Debug|x86.Deploy.0 = Debug|x86
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|ARM.ActiveCfg = Release|ARM
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|ARM.Build.0 = Release|ARM
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|ARM.Deploy.0 = Release|ARM
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|x64.ActiveCfg = Release|x64
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|x64.Build.0 = Release|x64
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|x64.Deploy.0 = Release|x64
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|x86.ActiveCfg = Release|x86
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|x86.Build.0 = Release|x86
+		{E22EED5F-2FC4-4AE7-81B7-12008896B7EC}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D6902FFD-7746-45CB-9A49-3EFD76BABFFE}
+	EndGlobalSection
+EndGlobal

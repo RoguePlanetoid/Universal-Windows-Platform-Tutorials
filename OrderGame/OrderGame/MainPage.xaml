@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="OrderGame.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OrderGame"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Viewbox>
+            <GridView Margin="50" HorizontalAlignment="Center" VerticalAlignment="Center" CanDrag="True" CanDragItems="True" AllowDrop="True"
+                CanReorderItems="True" SelectionMode="Single" Name="Display" DragItemsCompleted="Display_DragItemsCompleted">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="48" Height="48" Background="{ThemeResource ApplicationSecondaryForegroundThemeBrush}">
+                            <TextBlock Text="{Binding}" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        </Grid>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <ItemsWrapGrid Orientation="Horizontal" MaximumRowsOrColumns="6"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+            </GridView>
+        </Viewbox>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Name="New" Icon="Page2" Label="New" Click="New_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>
