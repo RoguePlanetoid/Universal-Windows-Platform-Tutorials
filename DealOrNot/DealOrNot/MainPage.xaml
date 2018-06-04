@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="DealOrNot.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DealOrNot"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Viewbox>
+            <Grid Margin="50" Name="Display" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Viewbox>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Page2" Label="New" Click="New_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="OperatorApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OperatorApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Viewbox Margin="50">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Name="Output" TextAlignment="Right" FontSize="30"
+		HorizontalAlignment="Stretch" Foreground="{ThemeResource AccentButtonBackground}"/>
+                <ItemsControl Grid.Row="1" Name="Display" Loaded="Display_Loaded">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Margin="5" Height="50" Width="50"
+				Background="{ThemeResource AccentButtonBackground}" Command="{Binding Command}">
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20"
+						Foreground="{ThemeResource AccentButtonForeground}" Text="{Binding Value}"/>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid MaximumRowsOrColumns="4" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Page>
