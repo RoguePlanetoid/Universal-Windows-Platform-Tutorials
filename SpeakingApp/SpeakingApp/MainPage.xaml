@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="SpeakingApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SpeakingApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="50" Name="Display" Loaded="Display_Loaded">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ComboBox Grid.Row="0" Name="Voice" HorizontalAlignment="Stretch"
+		SelectedValuePath="Key" DisplayMemberPath="Value"
+		SelectionChanged="Voice_SelectionChanged"/>
+            <TextBox Grid.Row="1" Name="Input" AcceptsReturn="True" TextWrapping="Wrap"/>
+            <MediaElement Name="Media" AutoPlay="False"/>
+        </Grid>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Page2" Label="New" Click="New_Click"/>
+            <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
+            <AppBarButton Icon="Save" Label="Save" Click="Save_Click"/>
+            <AppBarButton Icon="Play" Label="Play" Click="Play_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

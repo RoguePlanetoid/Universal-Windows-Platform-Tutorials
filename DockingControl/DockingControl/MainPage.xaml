@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="DockingControl.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DockingControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Viewbox Margin="50">
+            <local:DockingPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Rectangle Width="100" Height="100" Fill="Red" Margin="10" local:DockingPanel.Dock="Top"/>
+                <Rectangle Width="100" Height="100" Fill="Orange" Margin="10" local:DockingPanel.Dock="Bottom"/>
+                <Rectangle Width="100" Height="100" Fill="Yellow" Margin="10" local:DockingPanel.Dock="Left"/>
+                <Rectangle Width="100" Height="100" Fill="Green" Margin="10" local:DockingPanel.Dock="Right"/>
+                <Rectangle Width="100" Height="100" Fill="Cyan" Margin="10"/>
+            </local:DockingPanel>
+        </Viewbox>
+    </Grid>
+</Page>

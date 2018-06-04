@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="PdfViewApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PdfViewApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ComboBox Name="Page" Grid.Row="0" HorizontalAlignment="Stretch" SelectionChanged="Page_SelectionChanged"/>
+            <ScrollViewer Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Image Name="Display" Stretch="None"/>
+            </ScrollViewer>
+        </Grid>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

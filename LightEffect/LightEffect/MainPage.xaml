@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="LightEffect.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LightEffect"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Viewbox Margin="100">
+            <Grid Height="400" Width="400">
+                <Path Name="Logo" Fill="#FF5c2d91" Stretch="Uniform"
+		Data="M27.021,0l8.897,3.592v28.815L26.938,36L12.653,21.796l-9.061,7.021L0,27.021V8.979l3.592-1.714l9.061,7.102 
+		L27.021,0z M3.592,12.653v10.939l5.388-5.551L3.592,12.653z M17.633,18.041l9.306,7.348V10.693L17.633,18.041z">
+                </Path>
+            </Grid>
+        </Viewbox>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Accept" Label="Accept" Click="Accept_Click"/>
+            <AppBarButton Icon="Cancel" Label="Clear" Click="Clear_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>
