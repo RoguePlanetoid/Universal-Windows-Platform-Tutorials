@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="AdaptiveCard.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AdaptiveCard"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="50*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Name="Title" Grid.Row="0" Grid.Column="0" PlaceholderText="Title" Margin="20"/>
+            <TextBox Name="Body" Grid.Row="0" Grid.Column="1" PlaceholderText="Body" Margin="20"/>
+            <TextBox Name="Input" Grid.Row="1" Grid.Column="0" AcceptsReturn="True" TextWrapping="Wrap" Margin="20"/>
+            <Canvas Name="Display" Grid.Row="1" Grid.Column="1" Margin="20"/>
+        </Grid>
+        <CommandBar Name="Command" VerticalAlignment="Bottom">
+            <AppBarButton Icon="View" Label="View">
+                <AppBarButton.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Icon="PreviewLink" Text="Item" Click="Item_Click"/>
+                        <MenuFlyoutItem Icon="Document" Text="Json" Click="Json_Click"/>
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
+            <AppBarButton Icon="Save" Label="Save" Click="Save_Click"/>
+            <AppBarButton Icon="Add" Label="Add" Click="Add_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

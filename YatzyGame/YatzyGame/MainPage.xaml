@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="YatzyGame.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:YatzyGame"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Key="DiceTemplate" x:DataType="local:YatzyDice">
+            <StackPanel>
+                <Grid Margin="2" Height="50" Width="50" CornerRadius="2" 
+                    Background="{ThemeResource AccentButtonBackground}">
+                    <FontIcon FontSize="60" Margin="0,-8,0,0" FontFamily="Segoe UI Emoji" 
+                    Foreground="{ThemeResource AccentButtonForeground}"
+                    Glyph="{x:Bind Value, Mode=OneWay, Converter={StaticResource IntegerToGlyphConverter}}"/>
+                </Grid>
+                <ToggleButton Margin="2" HorizontalAlignment="Center" Content="Hold" 
+                IsChecked="{x:Bind Hold, Mode=OneWay}" Command="{x:Bind Command, Mode=OneWay}" 
+                CommandParameter="{x:Bind Index, Mode=OneWay}"/>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ScoreTemplate" x:DataType="local:YatzyItem">
+            <StackPanel>
+                <Grid Margin="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Width="200" Grid.Column="0" HorizontalContentAlignment="Left" 
+                    Content="{x:Bind Content}" Command="{x:Bind Command}"/>
+                    <Grid Grid.Column="1" Background="{ThemeResource AccentButtonBackground}">
+                        <TextBlock Width="75" Text="{x:Bind Score, Mode=TwoWay}"
+                        TextAlignment="Center" VerticalAlignment="Center"
+                        Foreground="{ThemeResource AccentButtonForeground}"/>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="TotalTemplate" x:DataType="local:YatzyItem">
+            <StackPanel>
+                <Grid Margin="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Width="200" Grid.Column="0" TextAlignment="Right" 
+                    Text="{x:Bind Content}" FontWeight="SemiBold"/>
+                    <Grid Grid.Column="1" Background="{ThemeResource AccentButtonForeground}">
+                        <TextBlock Width="75" Text="{x:Bind Score, Mode=TwoWay}" 
+                        TextAlignment="Center" VerticalAlignment="Center" 
+                        Foreground="{ThemeResource AccentButtonBackground}"/>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </DataTemplate>
+        <local:YatzyItemTemplateSelector x:Key="YatzyItemTemplateSelector" 
+            ScoreItem="{StaticResource ScoreTemplate}" TotalItem="{StaticResource TotalTemplate}" />
+        <local:IntegerToGlyphConverter x:Key="IntegerToGlyphConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Viewbox>
+            <StackPanel Margin="50">
+                <ItemsControl Name="Dice" HorizontalAlignment="Center" ItemTemplate="{StaticResource DiceTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+                <ItemsControl Name="Display" HorizontalAlignment="Center">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <ContentControl Content="{Binding}" ContentTemplateSelector="{StaticResource YatzyItemTemplateSelector}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Viewbox>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Page2" Label="New" Click="New_Click"/>
+            <AppBarButton Icon="Shuffle" Label="Roll" Click="Roll_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

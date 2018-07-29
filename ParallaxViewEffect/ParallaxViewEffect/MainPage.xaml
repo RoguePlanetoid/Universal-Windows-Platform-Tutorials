@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="ParallaxViewEffect.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ParallaxViewEffect"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <AutoSuggestBox Grid.Row="0" Name="Value" QueryIcon="Add" QuerySubmitted="Value_QuerySubmitted"/>
+            <Grid Grid.Row="1">
+                <ParallaxView Source="{x:Bind Display}" VerticalShift="100">
+                    <StackPanel Spacing="5" Orientation="Vertical" HorizontalAlignment="Center">
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Black"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Gray"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Red"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Orange"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Yellow"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Green"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Cyan"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Blue"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Magenta"/>
+                        <Rectangle Margin="10" Width="75" Height="75" Fill="Purple"/>
+                    </StackPanel>
+                </ParallaxView>
+                <ListView x:Name="Display">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Text}" VerticalAlignment="Center"/>
+                                <AppBarButton Grid.Column="1" Icon="Remove" Label="Remove" Tag="{Binding}" Click="Remove_Click"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

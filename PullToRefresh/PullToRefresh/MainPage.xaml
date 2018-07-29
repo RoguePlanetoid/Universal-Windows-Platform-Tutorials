@@ -1,0 +1,31 @@
+﻿<Page
+    x:Class="PullToRefresh.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PullToRefresh"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Name="PullToRefreshTemplate" x:DataType="local:PullToRefreshData">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Grid.Column="0" Margin="10" Height="100" Width="100" Fill="{x:Bind Path=Fill}"/>
+                <TextBlock Grid.Column="1" Text="{x:Bind Path=Date}" VerticalAlignment="Center"
+                Style="{StaticResource SubtitleTextBlockStyle}"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <RefreshContainer Margin="50" Name="Container">
+            <ListView Name="Display" ItemTemplate="{StaticResource PullToRefreshTemplate}"/>
+        </RefreshContainer>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Refresh" Label="Refres" Click="Refresh_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

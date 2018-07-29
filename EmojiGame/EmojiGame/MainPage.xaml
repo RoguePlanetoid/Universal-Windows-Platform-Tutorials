@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="EmojiGame.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EmojiGame"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <local:EmojiTypeToGlyphConverter x:Key="EmojiTypeToGlyphConverter"/>
+        <local:EmojiStateToBrushConverter x:Key="EmojiStateToBrushConverter"/>
+        <DataTemplate x:Key="EmojiTemplate" x:DataType="local:EmojiItem">
+            <Button Height="130" Width="130" HorizontalAlignment="Center" VerticalAlignment="Center" 
+            Background="{x:Bind State, Mode=OneWay, Converter={StaticResource EmojiStateToBrushConverter}}" 
+            Tag="{x:Bind}" Tapped="Display_Tapped">
+                <Viewbox>
+                    <TextBlock IsColorFontEnabled="True" FontFamily="Segoe UI Emoji" VerticalAlignment="Center"                           
+                        Text="{x:Bind Type, Mode=OneWay, Converter={StaticResource EmojiTypeToGlyphConverter}}"/>
+                </Viewbox>
+            </Button>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Viewbox Margin="50">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Name="Label" TextAlignment="Center" HorizontalAlignment="Center"
+                Style="{StaticResource SubtitleTextBlockStyle}" Width="400"/>
+                <ItemsControl Name="Display" HorizontalAlignment="Center" Height="400" Width="400" 
+                    ItemTemplate="{StaticResource EmojiTemplate}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+            </StackPanel>
+        </Viewbox>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Page2" Label="New" Click="New_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

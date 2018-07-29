@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="StickControl.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StickControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Name="Label" HorizontalAlignment="Center" Style="{StaticResource SubtitleTextBlockStyle}"/>
+            <local:Stick Radius="200" Knob="{ThemeResource AccentButtonBackground}" Face="WhiteSmoke" ValueChanged="Stick_ValueChanged"/>
+        </StackPanel>
+    </Grid>
+</Page>

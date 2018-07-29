@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="ConnectedAnimation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConnectedAnimation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ListView Name="Display" Margin="50">
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Black" Fill="Black" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Gray" Fill="Gray" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Red" Fill="Red" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Orange" Fill="Orange" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Yellow" Fill="Yellow" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Green" Fill="Green" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Cyan" Fill="Cyan" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Blue" Fill="Blue" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Magenta" Fill="Magenta" Tapped="Rectangle_Tapped"/>
+            <Rectangle Margin="10" Width="64" Height="64" Tag="Purple" Fill="Purple" Tapped="Rectangle_Tapped"/>
+        </ListView>
+    </Grid>
+</Page>
