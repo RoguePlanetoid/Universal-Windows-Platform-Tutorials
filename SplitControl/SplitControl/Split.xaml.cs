@@ -35,18 +35,22 @@ namespace SplitControl
                 _value = value;
                 if (_from != null)
                 {
-                    TextBlockBottom.Text = _from;
                     if (_from != value)
                     {
-                        TextBlockTop.Text = value;
-                        TextBlockFlipBottom.Text = value;
+                        TextBlockTop.Text = TextBlockFlipBottom.Text = value;
+                        TextBlockFlipTop.Text = _from;
+                        FlipAnimation.Completed -= (s, e) => { };
+                        FlipAnimation.Completed += (s, e) => TextBlockBottom.Text = _from;
                         FlipAnimation.Begin();
                     }
                 }
-                TextBlockFlipTop.Text = value;
+                if (_from == null)
+                {
+                    TextBlockFlipTop.Text = TextBlockBottom.Text = value;
+                }
                 _from = value;
             }
-        }
+        }      
     }
 
     public class Splits : StackPanel
