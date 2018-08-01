@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="AcrylicMaterial.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AcrylicMaterial"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid Margin="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ComboBox Grid.Row="0" Name="Options" HorizontalAlignment="Stretch" SelectionChanged="Options_SelectionChanged">
+                <ComboBoxItem IsSelected="True">None</ComboBoxItem>
+                <ComboBoxItem>SystemControlAcrylicElementBrush</ComboBoxItem>
+                <ComboBoxItem>SystemControlAcrylicElementMediumHighBrush</ComboBoxItem>
+                <ComboBoxItem>SystemControlBaseHighAcrylicElementMediumBrush</ComboBoxItem>
+            </ComboBox>
+            <Viewbox Grid.Row="1">
+                <Grid>
+                    <StackPanel Spacing="5" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Rectangle Width="50" Height="50" Fill="Black"/>
+                        <Rectangle Width="50" Height="50" Fill="Gray"/>
+                        <Rectangle Width="50" Height="50" Fill="Red"/>
+                        <Rectangle Width="50" Height="50" Fill="Orange"/>
+                        <Rectangle Width="50" Height="50" Fill="Yellow"/>
+                        <Rectangle Width="50" Height="50" Fill="Green"/>
+                        <Rectangle Width="50" Height="50" Fill="Cyan"/>
+                        <Rectangle Width="50" Height="50" Fill="Blue"/>
+                        <Rectangle Width="50" Height="50" Fill="Magenta"/>
+                        <Rectangle Width="50" Height="50" Fill="Purple"/>
+                    </StackPanel>
+                    <Rectangle x:Name="Overlay"/>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</Page>

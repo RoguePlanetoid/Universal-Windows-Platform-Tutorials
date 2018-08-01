@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="_360ViewApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_360ViewApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <MediaPlayerElement Name="Display" AreTransportControlsEnabled="True" 
+        AutoPlay="True" LayoutUpdated="Display_LayoutUpdated"/>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="OpenFile" Label="Open" Click="Open_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

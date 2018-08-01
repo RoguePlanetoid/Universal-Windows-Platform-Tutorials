@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="Reversi.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Reversi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="ContentPresenter" x:Key="TileStyle">
+            <Setter Property="local:Binder.GridRowBindingPath" Value="Row"/>
+            <Setter Property="local:Binder.GridColumnBindingPath" Value="Column"/>
+            <Setter Property="Background" Value="ForestGreen"/>
+        </Style>
+        <local:ReversiSquareStyle x:Key="ReversiSquareStyle" Tile="{StaticResource TileStyle}"/>
+        <local:ReversiStateToGlyphConverter x:Key="ReversiStateToGlyphConverter"/>
+        <DataTemplate x:Key="ReversiTemplate" x:DataType="local:ReversiSquare">
+            <Grid IsHitTestVisible="False" BorderThickness="1" BorderBrush="Black">
+                <Viewbox>
+                    <TextBlock IsColorFontEnabled="True" FontFamily="Segoe UI Emoji"
+                    Text="{x:Bind State, Mode=OneWay, Converter={StaticResource ReversiStateToGlyphConverter}}"/>
+                </Viewbox>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Viewbox>
+            <StackPanel Margin="50">
+                <TextBlock HorizontalAlignment="Center" Name="Scores">
+                    <Run FontFamily="Segoe UI">Score:</Run>
+                    <Run FontFamily="Segoe UI Emoji">&#x26AB;</Run>
+                    <Run Text="{Binding BlackScore}" FontFamily="Segoe UI" />
+                    <Run FontFamily="Segoe UI Emoji">&#x26AA;</Run>
+                    <Run Text="{Binding WhiteScore}" FontFamily="Segoe UI" />
+                    <Run FontFamily="Segoe UI">Move:</Run>
+                    <Run Text="{Binding NextMove, Converter={StaticResource ReversiStateToGlyphConverter}}" FontFamily="Segoe UI Emoji" />
+                </TextBlock>
+                <ItemsControl Name="Display" Width="400" Height="400" 
+                    ItemContainerStyleSelector="{StaticResource ReversiSquareStyle}" 
+                    ItemTemplate="{StaticResource ReversiTemplate}" Tapped="Display_Tapped">
+                </ItemsControl>
+            </StackPanel>
+        </Viewbox>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Page2" Label="New" Click="New_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>

@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="FileViewApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FileViewApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Key="TreeViewItemTemplate">
+            <TextBlock Text="{Binding Content.DisplayName}"
+            HorizontalAlignment="Left" VerticalAlignment="Center"
+            Style="{ThemeResource BodyTextBlockStyle}"/>
+        </DataTemplate>
+        <Style TargetType="TreeView">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TreeView">
+                        <TreeViewList x:Name="ListControl"
+                        ItemTemplate="{StaticResource TreeViewItemTemplate}"
+                        ItemContainerStyle="{StaticResource TreeViewItemStyle}"
+                        CanDragItems="True" AllowDrop="True" CanReorderItems="False">
+                        </TreeViewList>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <SplitView IsPaneOpen="True" DisplayMode="Inline">
+            <SplitView.Pane>
+                <TreeView x:Name="Display" SelectionMode="Single"
+                Expanding="TreeView_Expanding" Collapsed="TreeView_Collapsed"
+                ItemInvoked="TreeView_ItemInvoked"/>
+            </SplitView.Pane>
+            <StackPanel Margin="10">
+                <TextBlock Text="Name:"/>
+                <TextBlock Name="FileName" FontWeight="SemiBold"/>
+                <TextBlock Text="Path:"/>
+                <TextBlock Name="FilePath" FontWeight="SemiBold"/>
+            </StackPanel>
+        </SplitView>
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="OpenLocal" Label="Folder" Click="Folder_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>
